@@ -1,0 +1,75 @@
+{
+	"name": "electunes",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Electoron Simple MusicPlayer.",
+	"main": "src/electron.cjs",
+	"type": "module",
+	"author": "Nich87",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=dev npm run dev:all",
+		"dev:all": "concurrently -n=svelte,electron -c='#ff3e00',blue \"npm run dev:svelte\" \"npm run dev:electron\"",
+		"dev:svelte": "vite dev",
+		"dev:electron": "electron src/electron.cjs",
+		"build": "cross-env NODE_ENV=production npm run build:svelte && npm run build:electron",
+		"build:svelte": "vite build",
+		"build:electron": "electron-builder -w --config build.config.json",
+		"format": "prettier --write src/**/*.{svelte,ts}"
+	},
+	"engines": {
+		"npm": ">=7",
+		"yarn": "use npm - https://github.com/FractalHQ/sveltekit-electron/issues/12#issuecomment-1068399385"
+	},
+	"browserslist": [
+		"Chrome 89"
+	],
+	"dependencies": {
+		"@floating-ui/dom": "^1.5.0",
+		"buffer": "^6.0.3",
+		"electron-context-menu": "^3.6.1",
+		"electron-reloader": "^1.2.3",
+		"electron-serve": "^1.1.0",
+		"electron-window-state": "^5.0.3",
+		"flowbite": "^1.8.0",
+		"flowbite-svelte": "^0.40.2",
+		"music-metadata-browser": "^2.5.10",
+		"process": "^0.11.10",
+		"tailwind-merge": "^1.14.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "2.0.2",
+		"@sveltejs/kit": "1.22.3",
+		"@typescript-eslint/eslint-plugin": "^6.2.0",
+		"@typescript-eslint/parser": "^6.2.0",
+		"autoprefixer": "^10.4.14",
+		"concurrently": "^7.6.0",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.3.1",
+		"electron": "^25.3.2",
+		"electron-builder": "^24.6.3",
+		"electron-connect": "^0.6.3",
+		"electron-packager": "^17.1.1",
+		"electron-updater": "^6.1.1",
+		"eslint": "^8.46.0",
+		"eslint-config-prettier": "^8.9.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.27",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^3.0.0",
+		"prettier-plugin-svelte": "^3.0.3",
+		"sass": "^1.64.1",
+		"svelte": "^4.1.1",
+		"svelte-check": "^3.4.6",
+		"svelte-preprocess": "^5.0.4",
+		"tailwindcss": "^3.3.3",
+		"tslib": "^2.6.1",
+		"typescript": "^5.1.6",
+		"vite": "^4.4.7"
+	},
+	"overrides": {
+		"electron": {
+			"got": "^12.5.1"
+		}
+	}
+}
