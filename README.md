@@ -2,7 +2,7 @@
   <img src="static/Electunes.png" />
 </p>
 
-# What Elevtunes
+# What Electunes
 
 This is a simple music player built using Electron, Sveltekit, Typescript, and Flowbite.
 
